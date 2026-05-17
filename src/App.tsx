@@ -10,38 +10,35 @@ import Gallery from "./pages/Gallery"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Cart from "./pages/Cart"
+import { motion } from "framer-motion"
 
 function App() {
   return (
     <BrowserRouter>
 
-      <div className="bg-stone-100 min-h-screen">
+      <Navbar />
 
-        <Navbar />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
 
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
-
-          <Route path="/" element={<Home />} />
-
-          <Route path="/activities" element={<Activities />} />
-
-          <Route path="/booking" element={<Booking />} />
-
-          <Route path="/gallery" element={<Gallery />} />
-
-          <Route path="/about" element={<About />} />
-
-          <Route path="/contact" element={<Contact />} />
-
-          <Route path="/menu" element={<Menu />} />
-
         </Routes>
 
-        <Footer />
+      </motion.div>
 
-      </div>
+      <Footer />
 
     </BrowserRouter>
   )

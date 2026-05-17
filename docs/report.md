@@ -55,7 +55,7 @@ Users can:
 
 ## UI/UX
 - Cozy café design
-- Brown and beige theme
+- Black and white theme
 - Responsive layout
 - Animations
 - Hover effects
